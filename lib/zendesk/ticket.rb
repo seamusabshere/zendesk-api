@@ -1,8 +1,8 @@
 module Zendesk
   module Ticket
 
-    def get_tickets(rule_id)
-      make_request("rules/#{rule_id}")
+    def get_tickets(rule_id, page = 1)
+      make_request("rules/#{rule_id}", :list => { :page => page })
     end
 
     def get_ticket(id)
